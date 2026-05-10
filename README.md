@@ -1,36 +1,51 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# BlackDev - Site Institucional
 
-## Getting Started
+Site institucional premium da BlackDev, empresa de desenvolvimento web de Luís Eduardo Magalhães - BA.
 
-First, run the development server:
+## Tecnologias Utilizadas
+- **Framework**: Next.js 15 (App Router)
+- **Linguagem**: TypeScript
+- **Estilização**: Tailwind CSS v4
+- **Animações**: Framer Motion
+- **Ícones**: Lucide React
+- **Componentes**: Headless UI, React Hook Form
 
+## Estrutura do Projeto
+O projeto foi estruturado seguindo as melhores práticas do Next.js App Router:
+- `src/app/`: Páginas e roteamento.
+- `src/components/`: Componentes reutilizáveis (divididos em `home`, `layout` e `ui`).
+- `src/lib/constants.ts`: Arquivo centralizado com todos os dados do site (portfólio, serviços, etc).
+
+## Como rodar localmente
+
+1. Instale as dependências:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Inicie o servidor de desenvolvimento:
+```bash
+npm run dev
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Abra [http://localhost:3000](http://localhost:3000) no seu navegador.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Como customizar
+Toda a configuração de dados (texto do hero, serviços, depoimentos, número do WhatsApp) está localizada no arquivo `src/lib/constants.ts`. Basta alterá-lo para que todo o site seja atualizado automaticamente.
 
-## Learn More
+## Deploy
 
-To learn more about Next.js, take a look at the following resources:
+O site está otimizado para deploy na **Vercel** ou **Hostinger**.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Vercel (Recomendado)
+1. Crie uma conta na [Vercel](https://vercel.com).
+2. Conecte seu repositório do GitHub.
+3. Clique em **Deploy**. A Vercel detectará automaticamente que é um projeto Next.js.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Custom Server / Hostinger (cPanel / VPS)
+Para fazer o build de produção:
+```bash
+npm run build
+npm run start
+```
+*Nota: Para servidores que exigem exportação estática, adicione `output: 'export'` no `next.config.ts`.*

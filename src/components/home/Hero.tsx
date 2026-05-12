@@ -95,7 +95,7 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.3 }}
           >
-            <WhatsAppDropdown position="bottom">
+            <WhatsAppDropdown position="bottom" align="center">
               <button
                 className="group inline-flex items-center gap-2 px-8 py-4 bg-accent hover:bg-accent-hover text-primary font-bold rounded-xl transition-all hover:shadow-xl hover:shadow-accent/25 text-base outline-none"
               >

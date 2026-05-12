@@ -28,7 +28,7 @@ export default function CTASection() {
               </p>
 
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <WhatsAppDropdown position="top">
+                <WhatsAppDropdown position="top" align="center">
                   <button
                     className="w-full sm:w-auto group inline-flex items-center justify-center gap-2 px-8 py-4 bg-whatsapp hover:bg-whatsapp/90 text-white font-bold rounded-xl transition-all shadow-lg shadow-whatsapp/30 hover:shadow-whatsapp/50 text-base outline-none"
                   >

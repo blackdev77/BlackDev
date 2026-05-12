@@ -26,17 +26,17 @@ export const WHATSAPP_MESSAGE = encodeURIComponent(
 
 export const WHATSAPP_CONTACTS = [
   {
-    name: "Gustavo",
-    role: "Comercial / Projetos",
-    number: "5577999999999", // TODO: substituir pelo número real
+    name: "Edmundo",
+    role: "Comercial / Projetos / Suporte",
+    number: "5577998738251", // TODO: substituir pelo número real
     get link() {
       return `https://wa.me/${this.number}?text=${WHATSAPP_MESSAGE}`;
     }
   },
   {
-    name: "Sócio",
-    role: "Suporte / Técnico",
-    number: "5577999999998", // TODO: substituir pelo número real
+    name: "Gustavo",
+    role: "Suporte / Técnico / Comercial",
+    number: "5577991050011", // TODO: substituir pelo número real
     get link() {
       return `https://wa.me/${this.number}?text=${WHATSAPP_MESSAGE}`;
     }

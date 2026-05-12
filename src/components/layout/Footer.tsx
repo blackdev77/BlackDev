@@ -25,7 +25,7 @@ export default function Footer() {
               Desenvolvimento web profissional para empresas que buscam crescer
               com presença digital de alta performance.
             </p>
-            <WhatsAppDropdown position="top">
+            <WhatsAppDropdown position="top" align="left">
               <button
                 className="inline-flex items-center gap-2 px-4 py-2 bg-accent/10 hover:bg-accent/20 text-accent text-sm font-medium rounded-lg transition-colors outline-none"
               >
@@ -121,15 +121,6 @@ export default function Footer() {
                   className="text-sm text-text-secondary hover:text-accent transition-colors"
                 >
                   {COMPANY.email}
-                </a>
-              </li>
-              <li className="flex items-start gap-3">
-                <Phone className="w-4 h-4 text-accent mt-0.5 shrink-0" />
-                <a
-                  href={`tel:${COMPANY.phone.replace(/\D/g, "")}`}
-                  className="text-sm text-text-secondary hover:text-accent transition-colors"
-                >
-                  {COMPANY.phone}
                 </a>
               </li>
             </ul>

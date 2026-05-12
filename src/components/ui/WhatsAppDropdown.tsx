@@ -2,16 +2,29 @@
 
 import { Fragment } from "react";
 import { Menu, Transition } from "@headlessui/react";
-import { MessageCircle, User } from "lucide-react";
+import { MessageCircle } from "lucide-react";
 import { WHATSAPP_CONTACTS } from "@/lib/constants";
 
 interface WhatsAppDropdownProps {
   children: React.ReactNode;
   className?: string;
   position?: "top" | "bottom";
+  align?: "left" | "right" | "center";
 }
 
-export default function WhatsAppDropdown({ children, className = "", position = "bottom" }: WhatsAppDropdownProps) {
+export default function WhatsAppDropdown({ 
+  children, 
+  className = "", 
+  position = "bottom",
+  align = "right"
+}: WhatsAppDropdownProps) {
+  
+  const alignClasses = {
+    left: "left-0 origin-top-left",
+    right: "right-0 origin-top-right",
+    center: "left-1/2 -translate-x-1/2 origin-top",
+  };
+
   return (
     <Menu as="div" className={`relative inline-block text-left ${className}`}>
       {({ open }) => (
@@ -31,12 +44,12 @@ export default function WhatsAppDropdown({ children, className = "", position = 
             leaveTo="transform opacity-0 scale-95"
           >
             <Menu.Items 
-              className={`absolute ${position === "top" ? "bottom-full mb-2" : "top-full mt-2"} right-0 sm:left-0 sm:right-auto w-64 origin-top-right rounded-2xl glass border border-white/10 shadow-2xl shadow-black/50 focus:outline-none overflow-hidden z-50`}
+              className={`absolute ${position === "top" ? "bottom-full mb-3" : "top-full mt-3"} ${alignClasses[align]} w-[320px] rounded-2xl bg-secondary border border-white/10 shadow-2xl shadow-black/80 focus:outline-none overflow-hidden z-[100]`}
             >
               <div className="p-2">
-                <div className="px-3 py-2 mb-2 border-b border-white/5">
-                  <p className="text-xs font-semibold text-text-secondary uppercase tracking-wider">
-                    Falar com:
+                <div className="px-3 py-3 mb-1 border-b border-white/5">
+                  <p className="text-xs font-bold text-text-secondary uppercase tracking-wider">
+                    Escolha com quem falar:
                   </p>
                 </div>
                 {WHATSAPP_CONTACTS.map((contact) => (
@@ -48,14 +61,14 @@ export default function WhatsAppDropdown({ children, className = "", position = 
                         rel="noopener noreferrer"
                         className={`${
                           active ? "bg-white/5 text-accent" : "text-text-primary"
-                        } group flex w-full items-center gap-3 rounded-xl px-3 py-3 text-sm transition-colors`}
+                        } group flex w-full items-center gap-4 rounded-xl px-3 py-3 text-sm transition-colors`}
                       >
-                        <div className="w-10 h-10 rounded-full bg-whatsapp/10 flex items-center justify-center shrink-0 group-hover:bg-whatsapp/20 transition-colors">
-                          <MessageCircle className="w-5 h-5 text-whatsapp" />
+                        <div className="w-12 h-12 rounded-full bg-whatsapp/10 flex items-center justify-center shrink-0 group-hover:bg-whatsapp/20 transition-colors">
+                          <MessageCircle className="w-6 h-6 text-whatsapp" />
                         </div>
-                        <div className="flex flex-col text-left">
-                          <span className="font-semibold">{contact.name}</span>
-                          <span className="text-xs text-text-secondary">{contact.role}</span>
+                        <div className="flex flex-col text-left overflow-hidden">
+                          <span className="font-bold text-base truncate">{contact.name}</span>
+                          <span className="text-xs text-text-secondary truncate">{contact.role}</span>
                         </div>
                       </a>
                     )}

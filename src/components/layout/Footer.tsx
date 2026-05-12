@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Code2, Mail, MapPin, Phone } from "lucide-react";
-import { NAV_ITEMS, COMPANY, WHATSAPP_LINK } from "@/lib/constants";
+import { NAV_ITEMS, COMPANY } from "@/lib/constants";
+import WhatsAppDropdown from "@/components/ui/WhatsAppDropdown";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -24,14 +25,13 @@ export default function Footer() {
               Desenvolvimento web profissional para empresas que buscam crescer
               com presença digital de alta performance.
             </p>
-            <a
-              href={WHATSAPP_LINK}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-4 py-2 bg-accent/10 hover:bg-accent/20 text-accent text-sm font-medium rounded-lg transition-colors"
-            >
-              Fale Conosco
-            </a>
+            <WhatsAppDropdown position="top">
+              <button
+                className="inline-flex items-center gap-2 px-4 py-2 bg-accent/10 hover:bg-accent/20 text-accent text-sm font-medium rounded-lg transition-colors outline-none"
+              >
+                Fale Conosco
+              </button>
+            </WhatsAppDropdown>
           </div>
 
           {/* Quick Links */}

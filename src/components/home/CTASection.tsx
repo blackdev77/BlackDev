@@ -1,5 +1,5 @@
 import { ArrowRight, MessageCircle } from "lucide-react";
-import { WHATSAPP_LINK } from "@/lib/constants";
+import WhatsAppDropdown from "@/components/ui/WhatsAppDropdown";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 
 export default function CTASection() {
@@ -28,15 +28,14 @@ export default function CTASection() {
               </p>
 
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <a
-                  href={WHATSAPP_LINK}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full sm:w-auto group inline-flex items-center justify-center gap-2 px-8 py-4 bg-whatsapp hover:bg-whatsapp/90 text-white font-bold rounded-xl transition-all shadow-lg shadow-whatsapp/30 hover:shadow-whatsapp/50 text-base"
-                >
-                  <MessageCircle className="w-5 h-5" />
-                  Chamar no WhatsApp
-                </a>
+                <WhatsAppDropdown position="top">
+                  <button
+                    className="w-full sm:w-auto group inline-flex items-center justify-center gap-2 px-8 py-4 bg-whatsapp hover:bg-whatsapp/90 text-white font-bold rounded-xl transition-all shadow-lg shadow-whatsapp/30 hover:shadow-whatsapp/50 text-base outline-none"
+                  >
+                    <MessageCircle className="w-5 h-5" />
+                    Chamar no WhatsApp
+                  </button>
+                </WhatsAppDropdown>
                 <a
                   href="/contato"
                   className="w-full sm:w-auto group inline-flex items-center justify-center gap-2 px-8 py-4 glass glass-hover text-text-primary font-semibold rounded-xl transition-all text-base"

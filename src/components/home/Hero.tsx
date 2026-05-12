@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, Play } from "lucide-react";
-import { WHATSAPP_LINK } from "@/lib/constants";
+import WhatsAppDropdown from "@/components/ui/WhatsAppDropdown";
 import Link from "next/link";
 
 const words = [
@@ -95,15 +95,14 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.3 }}
           >
-            <a
-              href={WHATSAPP_LINK}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group inline-flex items-center gap-2 px-8 py-4 bg-accent hover:bg-accent-hover text-primary font-bold rounded-xl transition-all hover:shadow-xl hover:shadow-accent/25 text-base"
-            >
-              Solicitar Orçamento Grátis
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </a>
+            <WhatsAppDropdown position="bottom">
+              <button
+                className="group inline-flex items-center gap-2 px-8 py-4 bg-accent hover:bg-accent-hover text-primary font-bold rounded-xl transition-all hover:shadow-xl hover:shadow-accent/25 text-base outline-none"
+              >
+                Solicitar Orçamento Grátis
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </button>
+            </WhatsAppDropdown>
             <Link
               href="/portfolio"
               className="group inline-flex items-center gap-2 px-8 py-4 glass glass-hover text-text-primary font-semibold rounded-xl transition-all text-base"

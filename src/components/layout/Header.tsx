@@ -5,7 +5,8 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Code2 } from "lucide-react";
-import { NAV_ITEMS, WHATSAPP_LINK } from "@/lib/constants";
+import { NAV_ITEMS } from "@/lib/constants";
+import WhatsAppDropdown from "@/components/ui/WhatsAppDropdown";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -75,14 +76,13 @@ export default function Header() {
 
           {/* Desktop CTA */}
           <div className="hidden lg:flex items-center gap-4">
-            <a
-              href={WHATSAPP_LINK}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-5 py-2.5 bg-accent hover:bg-accent-hover text-primary font-semibold text-sm rounded-lg transition-all hover:shadow-lg hover:shadow-accent/25"
-            >
-              Solicitar Orçamento
-            </a>
+            <WhatsAppDropdown position="bottom">
+              <button
+                className="inline-flex items-center gap-2 px-5 py-2.5 bg-accent hover:bg-accent-hover text-primary font-semibold text-sm rounded-lg transition-all hover:shadow-lg hover:shadow-accent/25 outline-none"
+              >
+                Solicitar Orçamento
+              </button>
+            </WhatsAppDropdown>
           </div>
 
           {/* Mobile Menu Button */}
@@ -124,14 +124,13 @@ export default function Header() {
                 );
               })}
               <div className="pt-4 border-t border-border">
-                <a
-                  href={WHATSAPP_LINK}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block w-full text-center px-5 py-3 bg-accent hover:bg-accent-hover text-primary font-semibold text-sm rounded-lg transition-all"
-                >
-                  Solicitar Orçamento
-                </a>
+                <WhatsAppDropdown position="bottom" className="w-full">
+                  <button
+                    className="block w-full text-center px-5 py-3 bg-accent hover:bg-accent-hover text-primary font-semibold text-sm rounded-lg transition-all outline-none"
+                  >
+                    Solicitar Orçamento
+                  </button>
+                </WhatsAppDropdown>
               </div>
             </div>
           </motion.div>

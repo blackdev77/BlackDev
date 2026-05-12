@@ -20,11 +20,28 @@ import {
 /* ============================================
    WhatsApp Config
    ============================================ */
-export const WHATSAPP_NUMBER = "5577999999999"; // TODO: substituir pelo número real
 export const WHATSAPP_MESSAGE = encodeURIComponent(
   "Olá! Vim pelo site da BlackDev e gostaria de saber mais sobre os serviços de desenvolvimento web."
 );
-export const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_MESSAGE}`;
+
+export const WHATSAPP_CONTACTS = [
+  {
+    name: "Gustavo",
+    role: "Comercial / Projetos",
+    number: "5577999999999", // TODO: substituir pelo número real
+    get link() {
+      return `https://wa.me/${this.number}?text=${WHATSAPP_MESSAGE}`;
+    }
+  },
+  {
+    name: "Sócio",
+    role: "Suporte / Técnico",
+    number: "5577999999998", // TODO: substituir pelo número real
+    get link() {
+      return `https://wa.me/${this.number}?text=${WHATSAPP_MESSAGE}`;
+    }
+  }
+];
 
 /* ============================================
    Company Info
@@ -365,7 +382,7 @@ export const FAQ_ITEMS: FAQItem[] = [
   {
     question: "Quanto custa criar um site profissional?",
     answer:
-      "O valor varia conforme a complexidade do projeto. Sites institucionais partem de R$ 1.500, enquanto landing pages e sistemas web têm valores personalizados. Entre em contato para um orçamento gratuito e sem compromisso.",
+      "O valor é personalizado de acordo com a necessidade e complexidade de cada projeto. Como não trabalhamos com modelos engessados, os valores são negociados diretamente com cada cliente para garantir o melhor custo-benefício. Entre em contato para solicitar um orçamento gratuito e sem compromisso.",
   },
   {
     question: "Qual o prazo de entrega?",

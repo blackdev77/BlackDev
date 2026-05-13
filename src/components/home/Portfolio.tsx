@@ -67,7 +67,7 @@ export default function Portfolio() {
 
         <div className="mt-20 border-t border-border pt-12 flex justify-between items-center">
            <span className="text-lg font-serif text-text-secondary italic">
-             Mais de 50 projetos entregues.
+             Mais de 10 projetos entregues.
            </span>
            <Link
              href="/portfolio"

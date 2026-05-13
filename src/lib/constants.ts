@@ -55,7 +55,7 @@ export const COMPANY = {
   email: "contato@blackdev.com.br",
   phone: "(77) 9 9999-9999",
   founded: 2024,
-  projectsDelivered: 50,
+  projectsDelivered: 10,
   satisfactionRate: 98,
   supportHours: "24/7",
 };
@@ -262,7 +262,7 @@ export const PROJECTS: Project[] = [
     category: "Site Institucional",
     categorySlug: "institucional",
     description:
-      "Presença digital completa para empresa do agronegócio em LEM.",
+      "Presença digital completa para empresa do agronegócio em LEM. Plataforma com área de produtos, contato direto e integração com redes sociais.",
     image: "/images/portfolio-1.svg",
     tags: ["Next.js", "SEO", "Responsivo"],
   },
@@ -270,43 +270,63 @@ export const PROJECTS: Project[] = [
     title: "Clínica Vida",
     category: "Landing Page",
     categorySlug: "landing-page",
-    description: "Landing page de alta conversão para clínica médica local.",
+    description: "Landing page de alta conversão para clínica médica local com agendamento online via WhatsApp e depoimentos de pacientes.",
     image: "/images/portfolio-2.svg",
     tags: ["React", "Conversão", "WhatsApp"],
-  },
-  {
-    title: "GestãoPro",
-    category: "Sistema Web",
-    categorySlug: "sistema",
-    description: "Sistema de gestão empresarial com dashboards interativos.",
-    image: "/images/portfolio-3.svg",
-    tags: ["TypeScript", "Dashboard", "API"],
   },
   {
     title: "Sabor do Oeste",
     category: "Site Institucional",
     categorySlug: "institucional",
     description:
-      "Site premium para restaurante com cardápio digital e reservas.",
+      "Site premium para restaurante com cardápio digital interativo, galeria de fotos e sistema de reservas.",
     image: "/images/portfolio-4.svg",
     tags: ["Design", "Mobile-first", "SEO"],
-  },
-  {
-    title: "ImovelFácil",
-    category: "Sistema Web",
-    categorySlug: "sistema",
-    description: "Plataforma de imóveis com filtros avançados e mapa.",
-    image: "/images/portfolio-5.svg",
-    tags: ["Full-stack", "Maps", "Filtros"],
   },
   {
     title: "FitZone Academy",
     category: "Landing Page",
     categorySlug: "landing-page",
     description:
-      "Página de vendas para academia com planos e agendamento online.",
+      "Página de vendas para academia com apresentação de planos, depoimentos e botão de agendamento de aula experimental.",
     image: "/images/portfolio-6.svg",
     tags: ["Vendas", "Agendamento", "CTA"],
+  },
+  {
+    title: "Construtora Horizonte",
+    category: "Site Institucional",
+    categorySlug: "institucional",
+    description:
+      "Site corporativo para construtora regional com galeria de obras, timeline de empreendimentos e formulário de contato qualificado.",
+    image: "/images/portfolio-7.svg",
+    tags: ["Institucional", "Galeria", "Forms"],
+  },
+  {
+    title: "Pet Center Oeste",
+    category: "Landing Page",
+    categorySlug: "landing-page",
+    description:
+      "Landing page para clínica veterinária com agendamento de consultas, listagem de serviços e mapa de localização.",
+    image: "/images/portfolio-8.svg",
+    tags: ["Landing", "Maps", "WhatsApp"],
+  },
+  {
+    title: "Studio Bella",
+    category: "Site Institucional",
+    categorySlug: "institucional",
+    description:
+      "Site elegante para salão de beleza com portfólio de trabalhos, preços e agendamento online integrado.",
+    image: "/images/portfolio-9.svg",
+    tags: ["Design", "Portfólio", "Booking"],
+  },
+  {
+    title: "Auto Peças LEM",
+    category: "Landing Page",
+    categorySlug: "landing-page",
+    description:
+      "Página institucional para loja de autopeças com catálogo de produtos, orçamento via WhatsApp e localização.",
+    image: "/images/portfolio-10.svg",
+    tags: ["Catálogo", "WhatsApp", "SEO"],
   },
 ];
 
@@ -314,14 +334,12 @@ export const PORTFOLIO_CATEGORIES = [
   "Todos",
   "institucional",
   "landing-page",
-  "sistema",
 ];
 
 export const PORTFOLIO_CATEGORY_LABELS: Record<string, string> = {
   Todos: "Todos",
   institucional: "Sites Institucionais",
   "landing-page": "Landing Pages",
-  sistema: "Sistemas Web",
 };
 
 /* ============================================

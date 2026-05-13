@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { Code2, Mail, MapPin, Phone } from "lucide-react";
+import { Mail, MapPin, Phone } from "lucide-react";
+import Image from "next/image";
 import { NAV_ITEMS, COMPANY } from "@/lib/constants";
 import WhatsAppDropdown from "@/components/ui/WhatsAppDropdown";
 
@@ -14,9 +15,13 @@ export default function Footer() {
           {/* Brand */}
           <div className="lg:col-span-1">
             <Link href="/" className="flex items-center gap-3 mb-6 group">
-              <div className="w-10 h-10 bg-surface flex items-center justify-center border border-border group-hover:border-text-secondary transition-colors">
-                <Code2 className="w-5 h-5 text-text-primary" />
-              </div>
+              <Image
+                src="/images/logo.png"
+                alt="BlackDev Logo"
+                width={40}
+                height={40}
+                className="rounded-full"
+              />
               <span className="text-xl font-bold tracking-tight text-text-primary">
                 BLACK<span className="font-serif italic text-text-secondary ml-0.5">Dev</span>
               </span>

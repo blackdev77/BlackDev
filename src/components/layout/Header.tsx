@@ -4,7 +4,8 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Code2 } from "lucide-react";
+import { Menu, X } from "lucide-react";
+import Image from "next/image";
 import { NAV_ITEMS } from "@/lib/constants";
 import WhatsAppDropdown from "@/components/ui/WhatsAppDropdown";
 
@@ -36,9 +37,14 @@ export default function Header() {
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 group" aria-label="BlackDev - Página Inicial">
-            <div className="w-10 h-10 rounded-none bg-surface flex items-center justify-center border border-border group-hover:border-text-secondary transition-colors">
-              <Code2 className="w-5 h-5 text-accent" />
-            </div>
+            <Image
+              src="/images/logo.png"
+              alt="BlackDev Logo"
+              width={40}
+              height={40}
+              className="rounded-full"
+              priority
+            />
             <span className="text-xl font-bold tracking-tight">
               BLACK<span className="font-serif italic text-text-secondary ml-0.5">Dev</span>
             </span>

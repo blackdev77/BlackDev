@@ -71,7 +71,7 @@ export default function Hero() {
                 [ LEM — BA ]
               </div>
               <div>
-                <div className="text-5xl font-serif text-text-primary mb-2">50+</div>
+                <div className="text-5xl font-serif text-text-primary mb-2">10+</div>
                 <div className="text-sm text-text-muted uppercase tracking-wider">Projetos Entregues</div>
                 <div className="w-full h-[1px] bg-border my-8" />
                 <div className="text-5xl font-serif text-text-primary mb-2">98%</div>

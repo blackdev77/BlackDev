@@ -12,48 +12,45 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <>
-      {/* Hero Section */}
-      <div className="py-20 lg:py-28 relative">
+      <div className="py-24 lg:py-32 bg-primary">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionTitle
-            badge="Nossa História"
-            title="Desenvolvendo o futuro digital de"
-            highlight="Luís Eduardo Magalhães"
-            description="Nascemos da necessidade de profissionalizar a presença online das empresas locais com tecnologia de ponta."
+            badge="Quem Somos"
+            title="Engenharia digital com"
+            highlight="propósito."
+            description="Nascemos da necessidade de profissionalizar a presença online das empresas locais com tecnologia de ponta e design estratégico."
+            center={false}
           />
 
           <ScrollReveal delay={0.1}>
-            <div className="relative rounded-3xl overflow-hidden min-h-[400px] flex items-center justify-center bg-secondary mb-20 border border-border">
-              <div className="absolute inset-0 bg-gradient-to-br from-accent/5 via-transparent to-accent/10" />
-              <div className="relative z-10 text-center p-8">
-                 <div className="w-20 h-20 mx-auto rounded-2xl bg-accent/10 flex items-center justify-center mb-6 border border-accent/20">
-                   <span className="text-3xl font-bold text-accent">B</span>
-                 </div>
-                 <h3 className="text-2xl font-bold text-text-primary mb-4">Inovação e Qualidade</h3>
-                 <p className="text-text-secondary max-w-2xl mx-auto leading-relaxed">
-                   "Acreditamos que todo negócio, independente do tamanho, merece um site 
-                   rápido, bonito e que realmente traga clientes."
+            <div className="relative border border-border bg-surface min-h-[400px] flex items-center justify-center mb-24 p-12">
+              <div className="relative z-10 text-center max-w-3xl mx-auto">
+                 <div className="text-6xl font-serif text-text-primary mb-8">"</div>
+                 <p className="text-2xl font-serif italic text-text-primary leading-relaxed mb-8">
+                   Acreditamos que todo negócio, independente do tamanho, merece uma presença digital que transmita a mesma excelência dos seus produtos e serviços.
                  </p>
+                 <div className="w-16 h-[1px] bg-border mx-auto mb-6" />
+                 <span className="text-sm text-text-muted uppercase tracking-widest">Fundadores — BlackDev</span>
               </div>
             </div>
           </ScrollReveal>
           
           {/* Values Section */}
           <div className="mb-20">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold">Nossos Pilares</h2>
-            </div>
+            <ScrollReveal>
+              <h2 className="text-3xl md:text-4xl font-serif text-text-primary mb-12">Nossos Pilares</h2>
+            </ScrollReveal>
             
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-0 border-t border-border">
               {VALUES.map((value, index) => {
                 const Icon = value.icon;
                 return (
                   <ScrollReveal key={value.title} delay={index * 0.1}>
-                    <div className="p-8 rounded-2xl glass h-full text-center group">
-                      <div className="w-14 h-14 mx-auto rounded-xl bg-accent/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                        <Icon className="w-7 h-7 text-accent" />
+                    <div className="p-8 h-full text-left group border-b lg:border-b-0 lg:border-r border-border last:border-r-0 last:border-b-0">
+                      <div className="w-12 h-12 border border-border flex items-center justify-center mb-6 group-hover:border-text-secondary transition-colors">
+                        <Icon className="w-6 h-6 text-text-secondary group-hover:text-text-primary transition-colors" />
                       </div>
-                      <h3 className="text-lg font-bold text-text-primary mb-3">
+                      <h3 className="text-xl font-serif text-text-primary mb-3">
                         {value.title}
                       </h3>
                       <p className="text-sm text-text-secondary leading-relaxed">

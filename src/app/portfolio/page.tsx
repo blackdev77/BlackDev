@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { ExternalLink } from "lucide-react";
 import { PROJECTS, PORTFOLIO_CATEGORIES, PORTFOLIO_CATEGORY_LABELS } from "@/lib/constants";
 import SectionTitle from "@/components/ui/SectionTitle";
 import ScrollReveal from "@/components/ui/ScrollReveal";
@@ -16,28 +15,27 @@ export default function PortfolioPage() {
 
   return (
     <>
-      <div className="py-20 lg:py-28 relative min-h-screen">
-        <div className="absolute inset-0 grid-pattern opacity-20" />
-        
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="py-24 lg:py-32 bg-primary min-h-screen">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <SectionTitle
-            badge="Portfólio"
+            badge="Case Studies"
             title="Nossos"
-            highlight="Trabalhos"
+            highlight="Trabalhos."
             description="Explore os projetos que desenvolvemos e veja como transformamos ideias em soluções digitais reais."
+            center={false}
           />
 
           {/* Filters */}
           <ScrollReveal delay={0.1}>
-            <div className="flex flex-wrap items-center justify-center gap-2 md:gap-4 mb-16">
+            <div className="flex flex-wrap items-start gap-3 mb-16 border-b border-border pb-6">
               {PORTFOLIO_CATEGORIES.map((category) => (
                 <button
                   key={category}
                   onClick={() => setActiveCategory(category)}
-                  className={`px-5 py-2.5 rounded-full text-sm font-medium transition-all ${
+                  className={`px-5 py-2.5 text-sm font-medium transition-colors ${
                     activeCategory === category
-                      ? "bg-accent text-primary shadow-lg shadow-accent/25"
-                      : "glass text-text-secondary hover:text-text-primary hover:bg-white/5"
+                      ? "bg-text-primary text-primary"
+                      : "border border-border text-text-secondary hover:text-text-primary hover:border-text-secondary"
                   }`}
                 >
                   {PORTFOLIO_CATEGORY_LABELS[category]}
@@ -47,41 +45,37 @@ export default function PortfolioPage() {
           </ScrollReveal>
 
           {/* Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-16">
             {filteredProjects.map((project, index) => (
               <ScrollReveal key={project.title} delay={index * 0.05}>
-                <div className="group relative rounded-2xl overflow-hidden glass glass-hover transition-all duration-500 h-full flex flex-col">
-                  {/* Image placeholder with gradient */}
-                  <div className="relative h-56 bg-gradient-to-br from-accent/10 to-cyan-900/20 flex items-center justify-center overflow-hidden">
-                    <div className="text-5xl font-bold text-accent/20 group-hover:text-accent/30 transition-colors">
-                      {project.title.split(" ").map((w) => w[0]).join("")}
-                    </div>
-                    {/* Hover overlay */}
-                    <div className="absolute inset-0 bg-accent/10 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                      <div className="w-14 h-14 rounded-full bg-accent/20 flex items-center justify-center backdrop-blur-sm cursor-pointer hover:bg-accent/40 transition-colors shadow-[0_0_20px_rgba(6,182,212,0.5)]">
-                        <ExternalLink className="w-6 h-6 text-accent" />
-                      </div>
+                <div className="group flex flex-col">
+                  {/* Image placeholder */}
+                  <div className="relative w-full aspect-[4/3] bg-surface border border-border overflow-hidden mb-6">
+                    <div className="absolute inset-0 bg-text-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                    <div className="absolute inset-0 flex items-center justify-center">
+                       <span className="font-serif text-4xl md:text-5xl text-border group-hover:text-text-muted transition-colors duration-500">
+                        {project.title.split(" ").map((w) => w[0]).join("")}
+                       </span>
                     </div>
                   </div>
 
                   {/* Content */}
-                  <div className="p-6 md:p-8 flex-grow flex flex-col">
-                    <span className="text-xs font-semibold text-accent uppercase tracking-wider">
+                  <div className="flex flex-col">
+                    <span className="text-xs font-mono tracking-widest text-text-muted uppercase mb-3">
                       {project.category}
                     </span>
-                    <h3 className="mt-2 text-xl font-bold text-text-primary">
+                    <h3 className="text-2xl font-serif text-text-primary mb-3">
                       {project.title}
                     </h3>
-                    <p className="mt-3 text-text-secondary leading-relaxed flex-grow">
+                    <p className="text-base text-text-secondary leading-relaxed mb-6">
                       {project.description}
                     </p>
 
-                    {/* Tags */}
-                    <div className="mt-6 flex flex-wrap gap-2">
+                    <div className="flex flex-wrap gap-2">
                       {project.tags.map((tag) => (
                         <span
                           key={tag}
-                          className="px-3 py-1.5 text-xs font-medium text-text-primary bg-white/5 rounded-lg border border-white/10"
+                          className="px-3 py-1 text-xs font-medium text-text-secondary border border-border"
                         >
                           {tag}
                         </span>
@@ -94,7 +88,7 @@ export default function PortfolioPage() {
           </div>
 
           {filteredProjects.length === 0 && (
-            <div className="text-center py-20 text-text-secondary">
+            <div className="text-center py-20 text-text-secondary font-serif italic text-xl">
               Nenhum projeto encontrado para esta categoria.
             </div>
           )}

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowDownRight } from "lucide-react";
 import { PROJECTS } from "@/lib/constants";
 import SectionTitle from "@/components/ui/SectionTitle";
@@ -23,15 +24,14 @@ export default function Portfolio() {
             <ScrollReveal key={project.title} delay={index * 0.1}>
               <div className={`group flex flex-col ${index % 2 !== 0 ? 'md:mt-16' : ''}`}>
                 <div className="relative w-full aspect-[4/3] bg-surface border border-border overflow-hidden mb-6">
-                  {/* Subtle hover effect on the box */}
-                  <div className="absolute inset-0 bg-text-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                  
-                  {/* Text placeholder for now */}
-                  <div className="absolute inset-0 flex items-center justify-center">
-                     <span className="font-serif text-3xl md:text-5xl text-border group-hover:text-text-muted transition-colors duration-500">
-                      {project.title.split(" ").map(w => w[0]).join("")}
-                     </span>
-                  </div>
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    fill
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                  />
+                  <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 </div>
 
                 <div className="flex flex-col">

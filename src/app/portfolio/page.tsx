@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { PROJECTS, PORTFOLIO_CATEGORIES, PORTFOLIO_CATEGORY_LABELS } from "@/lib/constants";
 import SectionTitle from "@/components/ui/SectionTitle";
 import ScrollReveal from "@/components/ui/ScrollReveal";
@@ -49,14 +50,16 @@ export default function PortfolioPage() {
             {filteredProjects.map((project, index) => (
               <ScrollReveal key={project.title} delay={index * 0.05}>
                 <div className="group flex flex-col">
-                  {/* Image placeholder */}
+                  {/* Project Image */}
                   <div className="relative w-full aspect-[4/3] bg-surface border border-border overflow-hidden mb-6">
-                    <div className="absolute inset-0 bg-text-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                    <div className="absolute inset-0 flex items-center justify-center">
-                       <span className="font-serif text-4xl md:text-5xl text-border group-hover:text-text-muted transition-colors duration-500">
-                        {project.title.split(" ").map((w) => w[0]).join("")}
-                       </span>
-                    </div>
+                    <Image
+                      src={project.image}
+                      alt={project.title}
+                      fill
+                      className="object-cover transition-transform duration-700 group-hover:scale-105"
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                    />
+                    <div className="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   </div>
 
                   {/* Content */}

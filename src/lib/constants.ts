@@ -263,7 +263,7 @@ export const PROJECTS: Project[] = [
     categorySlug: "institucional",
     description:
       "Presença digital completa para empresa do agronegócio em LEM. Plataforma com área de produtos, contato direto e integração com redes sociais.",
-    image: "/images/portfolio-1.svg",
+    image: "/images/portfolio-1.png",
     tags: ["Next.js", "SEO", "Responsivo"],
   },
   {
@@ -271,7 +271,7 @@ export const PROJECTS: Project[] = [
     category: "Landing Page",
     categorySlug: "landing-page",
     description: "Landing page de alta conversão para clínica médica local com agendamento online via WhatsApp e depoimentos de pacientes.",
-    image: "/images/portfolio-2.svg",
+    image: "/images/portfolio-2.png",
     tags: ["React", "Conversão", "WhatsApp"],
   },
   {
@@ -280,7 +280,7 @@ export const PROJECTS: Project[] = [
     categorySlug: "institucional",
     description:
       "Site premium para restaurante com cardápio digital interativo, galeria de fotos e sistema de reservas.",
-    image: "/images/portfolio-4.svg",
+    image: "/images/portfolio-3.png",
     tags: ["Design", "Mobile-first", "SEO"],
   },
   {
@@ -289,7 +289,7 @@ export const PROJECTS: Project[] = [
     categorySlug: "landing-page",
     description:
       "Página de vendas para academia com apresentação de planos, depoimentos e botão de agendamento de aula experimental.",
-    image: "/images/portfolio-6.svg",
+    image: "/images/portfolio-4.png",
     tags: ["Vendas", "Agendamento", "CTA"],
   },
   {
@@ -298,7 +298,7 @@ export const PROJECTS: Project[] = [
     categorySlug: "institucional",
     description:
       "Site corporativo para construtora regional com galeria de obras, timeline de empreendimentos e formulário de contato qualificado.",
-    image: "/images/portfolio-7.svg",
+    image: "/images/portfolio-5.png",
     tags: ["Institucional", "Galeria", "Forms"],
   },
   {
@@ -307,7 +307,7 @@ export const PROJECTS: Project[] = [
     categorySlug: "landing-page",
     description:
       "Landing page para clínica veterinária com agendamento de consultas, listagem de serviços e mapa de localização.",
-    image: "/images/portfolio-8.svg",
+    image: "/images/portfolio-6.png",
     tags: ["Landing", "Maps", "WhatsApp"],
   },
   {
@@ -316,7 +316,7 @@ export const PROJECTS: Project[] = [
     categorySlug: "institucional",
     description:
       "Site elegante para salão de beleza com portfólio de trabalhos, preços e agendamento online integrado.",
-    image: "/images/portfolio-9.svg",
+    image: "/images/portfolio-7.png",
     tags: ["Design", "Portfólio", "Booking"],
   },
   {
@@ -325,7 +325,7 @@ export const PROJECTS: Project[] = [
     categorySlug: "landing-page",
     description:
       "Página institucional para loja de autopeças com catálogo de produtos, orçamento via WhatsApp e localização.",
-    image: "/images/portfolio-10.svg",
+    image: "/images/portfolio-8.png",
     tags: ["Catálogo", "WhatsApp", "SEO"],
   },
 ];

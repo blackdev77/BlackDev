@@ -7,27 +7,26 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-secondary border-t border-border">
+    <footer className="bg-primary border-t border-border pt-12">
       {/* Main Footer */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Brand */}
           <div className="lg:col-span-1">
-            <Link href="/" className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center">
-                <Code2 className="w-6 h-6 text-accent" />
+            <Link href="/" className="flex items-center gap-3 mb-6 group">
+              <div className="w-10 h-10 bg-surface flex items-center justify-center border border-border group-hover:border-text-secondary transition-colors">
+                <Code2 className="w-5 h-5 text-text-primary" />
               </div>
-              <span className="text-xl font-bold">
-                Black<span className="text-accent">Dev</span>
+              <span className="text-xl font-bold tracking-tight text-text-primary">
+                BLACK<span className="font-serif italic text-text-secondary ml-0.5">Dev</span>
               </span>
             </Link>
-            <p className="text-text-secondary text-sm leading-relaxed mb-6">
-              Desenvolvimento web profissional para empresas que buscam crescer
-              com presença digital de alta performance.
+            <p className="text-text-secondary text-sm leading-relaxed mb-8">
+              Engenharia digital de alta performance para empresas que buscam estabelecer autoridade e conversão.
             </p>
             <WhatsAppDropdown position="top" align="left">
               <button
-                className="inline-flex items-center gap-2 px-4 py-2 bg-accent/10 hover:bg-accent/20 text-accent text-sm font-medium rounded-lg transition-colors outline-none"
+                className="inline-flex items-center gap-2 px-5 py-2.5 bg-surface border border-border hover:bg-white/5 text-text-primary text-sm font-medium transition-colors outline-none"
               >
                 Fale Conosco
               </button>
@@ -129,17 +128,13 @@ export default function Footer() {
       </div>
 
       {/* Bottom Bar */}
-      <div className="border-t border-border">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-xs text-text-muted">
-            © {currentYear} {COMPANY.name}. Todos os direitos reservados.
+      <div className="border-t border-border mt-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p className="text-xs text-text-muted uppercase tracking-wider">
+            © {currentYear} {COMPANY.name}. All rights reserved.
           </p>
-          <p className="text-xs text-text-muted">
-            Feito com{" "}
-            <span className="text-accent" aria-label="amor">
-              ♥
-            </span>{" "}
-            em {COMPANY.city} - {COMPANY.state}
+          <p className="text-xs text-text-muted uppercase tracking-wider">
+            {COMPANY.fullAddress}
           </p>
         </div>
       </div>

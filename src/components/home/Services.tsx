@@ -1,61 +1,59 @@
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { SERVICES } from "@/lib/constants";
 import SectionTitle from "@/components/ui/SectionTitle";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 
 export default function Services() {
   return (
-    <section id="servicos" className="py-20 lg:py-28 bg-secondary relative">
-      <div className="absolute inset-0 grid-pattern opacity-30" />
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="servicos" className="py-24 lg:py-32 bg-primary">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionTitle
-          badge="Nossos Serviços"
-          title="Soluções completas em"
-          highlight="desenvolvimento web"
-          description="Do conceito ao deploy, criamos soluções digitais que impulsionam o crescimento do seu negócio."
+          badge="Expertise"
+          title="Nossas frentes de"
+          highlight="atuação."
+          description="Soluções desenvolvidas sob medida para desafios corporativos complexos."
+          center={true}
         />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="mt-16 border-t border-border">
           {SERVICES.map((service, index) => {
             const Icon = service.icon;
             return (
               <ScrollReveal key={service.slug} delay={index * 0.1}>
-                <div className="group relative p-6 lg:p-8 rounded-2xl glass glass-hover transition-all duration-300 h-full flex flex-col">
-                  {/* Icon */}
-                  <div className="w-14 h-14 rounded-xl bg-accent/10 flex items-center justify-center mb-6 group-hover:bg-accent/20 group-hover:scale-110 transition-all">
-                    <Icon className="w-7 h-7 text-accent" />
+                <div className="group border-b border-border py-10 transition-colors hover:bg-surface flex flex-col lg:flex-row gap-8 lg:gap-12 items-start lg:items-center px-4 lg:px-8">
+                  <div className="flex items-center gap-6 lg:w-1/3">
+                    <Icon className="w-8 h-8 text-text-muted group-hover:text-text-primary transition-colors" />
+                    <h3 className="text-2xl font-serif text-text-primary">
+                      {service.title}
+                    </h3>
+                  </div>
+                  
+                  <div className="lg:w-1/3">
+                    <p className="text-base text-text-secondary leading-relaxed">
+                      {service.description}
+                    </p>
                   </div>
 
-                  {/* Content */}
-                  <h3 className="text-xl font-bold text-text-primary mb-3">
-                    {service.title}
-                  </h3>
-                  <p className="text-sm text-text-secondary leading-relaxed mb-5 flex-grow">
-                    {service.description}
-                  </p>
-
-                  {/* Features list */}
-                  <ul className="space-y-2 mb-6">
-                    {service.features.map((feature) => (
-                      <li
-                        key={feature}
-                        className="flex items-center gap-2 text-sm text-text-secondary"
-                      >
-                        <span className="w-1.5 h-1.5 rounded-full bg-accent shrink-0" />
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
-
-                  {/* Link */}
-                  <Link
-                    href={`/servicos#${service.slug}`}
-                    className="inline-flex items-center gap-2 text-sm font-medium text-accent hover:text-accent-hover transition-colors group/link"
-                  >
-                    Saiba mais
-                    <ArrowRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
-                  </Link>
+                  <div className="lg:w-1/3 flex flex-col sm:flex-row lg:items-center justify-between gap-6 w-full">
+                    <ul className="space-y-2">
+                      {service.features.slice(0, 3).map((feature) => (
+                        <li
+                          key={feature}
+                          className="flex items-center gap-3 text-sm text-text-secondary"
+                        >
+                          <span className="w-1 h-1 bg-border group-hover:bg-text-secondary transition-colors" />
+                          {feature}
+                        </li>
+                      ))}
+                    </ul>
+                    <Link
+                      href={`/servicos#${service.slug}`}
+                      className="w-12 h-12 rounded-full border border-border flex items-center justify-center shrink-0 group-hover:bg-text-primary group-hover:border-text-primary transition-colors mt-4 sm:mt-0"
+                    >
+                      <ArrowUpRight className="w-5 h-5 text-text-secondary group-hover:text-primary transition-colors" />
+                    </Link>
+                  </div>
                 </div>
               </ScrollReveal>
             );

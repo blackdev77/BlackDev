@@ -48,7 +48,7 @@ export const WHATSAPP_CONTACTS = [
    ============================================ */
 export const COMPANY = {
   name: "BlackDev",
-  tagline: "Desenvolvimento Web Profissional",
+  tagline: "Engenharia Digital & Posicionamento",
   city: "Luís Eduardo Magalhães",
   state: "BA",
   fullAddress: "Luís Eduardo Magalhães - BA",
@@ -88,39 +88,39 @@ export interface Benefit {
 export const BENEFITS: Benefit[] = [
   {
     icon: Globe,
-    title: "100% Responsivo",
+    title: "Arquitetura Escalável",
     description:
-      "Sites que se adaptam perfeitamente a qualquer tela — celular, tablet ou desktop.",
+      "Sistemas desenhados para crescer com sua operação, utilizando tecnologias modernas e código limpo.",
   },
   {
     icon: TrendingUp,
-    title: "Focado em Conversão",
+    title: "Estratégia de Conversão",
     description:
-      "Design estratégico que transforma visitantes em clientes reais para o seu negócio.",
+      "Design guiado por dados. Cada elemento visual é pensado para conduzir o usuário à decisão de negócio.",
   },
   {
     icon: MapPin,
-    title: "SEO Local",
+    title: "Posicionamento Authority",
     description:
-      "Otimização para buscas locais em Luís Eduardo Magalhães e região oeste da Bahia.",
+      "Construção de autoridade digital focada em empresas que exigem percepção premium de seus clientes.",
   },
   {
     icon: MessageCircle,
-    title: "WhatsApp Integrado",
+    title: "Comunicação Direta",
     description:
-      "Botão de contato direto via WhatsApp para gerar leads instantaneamente.",
+      "Pontos de contato integrados (WhatsApp, CRM) para reduzir o atrito entre o cliente e o fechamento.",
   },
   {
     icon: Zap,
-    title: "Ultra Rápido",
+    title: "Performance Extrema",
     description:
-      "Sites com carregamento em menos de 2 segundos para a melhor experiência.",
+      "Otimização rigorosa de tempo de carregamento e acessibilidade para máxima retenção de usuários.",
   },
   {
     icon: Headphones,
-    title: "Suporte Dedicado",
+    title: "Parceria Estratégica",
     description:
-      "Acompanhamento pós-entrega com suporte técnico e manutenção contínua.",
+      "Não entregamos apenas código. Acompanhamos a evolução do seu negócio com suporte e auditoria contínua.",
   },
 ];
 
@@ -138,66 +138,66 @@ export interface Service {
 export const SERVICES: Service[] = [
   {
     icon: Monitor,
-    title: "Sites Institucionais",
+    title: "Plataformas Corporativas",
     description:
-      "Sites profissionais que transmitem credibilidade e fortalecem a presença digital da sua empresa.",
+      "Presença digital robusta para empresas que buscam estabelecer autoridade, apresentar portfólio estruturado e gerar confiança no mercado B2B ou B2C.",
     features: [
-      "Design exclusivo e personalizado",
-      "Otimizado para SEO",
-      "Integração com redes sociais",
-      "Painel administrativo",
+      "Arquitetura da Informação estruturada",
+      "Design System proprietário",
+      "Painel de controle customizado",
+      "Integração com ecossistema interno",
     ],
     slug: "sites-institucionais",
   },
   {
     icon: Layout,
-    title: "Landing Pages",
+    title: "High-Converting Pages",
     description:
-      "Páginas de alta conversão focadas em capturar leads e impulsionar vendas.",
+      "Estruturas focadas exclusivamente em funis de venda, captação de leads e lançamento de produtos, com otimização contínua de conversão (CRO).",
     features: [
-      "Copy persuasiva",
-      "A/B Testing ready",
-      "Formulários inteligentes",
-      "Analytics integrado",
+      "Copywriting focado em objeções",
+      "Métricas de rastreamento avançado",
+      "Formulários de qualificação",
+      "Testes e validação de interface",
     ],
     slug: "landing-pages",
   },
   {
     icon: Database,
-    title: "Sistemas Web",
+    title: "Engenharia de Software",
     description:
-      "Aplicações web sob medida para automatizar processos e aumentar a produtividade.",
+      "Desenvolvimento sob medida para necessidades operacionais complexas. De portais de clientes a sistemas de gestão interna.",
     features: [
-      "Dashboards interativos",
-      "Gestão de dados",
-      "APIs e integrações",
-      "Multi-usuário com permissões",
+      "Dashboards analíticos",
+      "Arquitetura Cloud-native",
+      "Regras de negócio complexas",
+      "Controle granular de permissões",
     ],
     slug: "sistemas-web",
   },
   {
     icon: Wrench,
-    title: "Manutenção & Suporte",
+    title: "Auditoria & Manutenção",
     description:
-      "Manutenção preventiva e suporte técnico para manter seu site sempre atualizado e seguro.",
+      "Acompanhamento técnico para garantir segurança, evolução tecnológica e integridade do seu principal ativo digital.",
     features: [
-      "Atualizações de segurança",
-      "Backup automático",
-      "Monitoramento 24/7",
-      "Correção de bugs",
+      "Auditoria de Segurança (SecOps)",
+      "Monitoramento de uptime 24/7",
+      "Escalabilidade técnica",
+      "Resolução pró-ativa de incidentes",
     ],
     slug: "manutencao-suporte",
   },
   {
     icon: Link2,
-    title: "Integrações",
+    title: "Conectividade & APIs",
     description:
-      "Conecte seu site a ferramentas de pagamento, CRM, e-mail marketing e muito mais.",
+      "Sincronização de dados entre seu site e os sistemas que movem sua operação, como ERPs, plataformas de pagamento e ferramentas de automação.",
     features: [
-      "Gateway de pagamento",
-      "CRM e automação",
-      "E-mail marketing",
-      "APIs de terceiros",
+      "Integrações de Gateways",
+      "Fluxos de automação (Webhooks)",
+      "Integração com CRM",
+      "APIs Restful e GraphQL",
     ],
     slug: "integracoes",
   },
@@ -216,30 +216,30 @@ export interface ProcessStep {
 export const PROCESS_STEPS: ProcessStep[] = [
   {
     number: "01",
-    title: "Descoberta",
+    title: "Diagnóstico",
     description:
-      "Entendemos seu negócio, público-alvo e objetivos para criar a estratégia ideal.",
+      "Mapeamento profundo do cenário do seu negócio, identificação de gargalos de comunicação e alinhamento de objetivos comerciais.",
     icon: Search,
   },
   {
     number: "02",
-    title: "Design",
+    title: "Arquitetura Visual",
     description:
-      "Criamos layouts modernos e intuitivos que encantam e convertem visitantes.",
+      "Elaboração de interfaces baseadas em comportamento de usuário (UX) e design de alto padrão (UI), garantindo coerência de marca.",
     icon: Palette,
   },
   {
     number: "03",
-    title: "Desenvolvimento",
+    title: "Engenharia Técnica",
     description:
-      "Codificamos com as melhores tecnologias, garantindo performance e segurança.",
+      "Construção do código com tecnologias modernas, garantindo estabilidade, segurança e performance impecável em todos os dispositivos.",
     icon: Code2,
   },
   {
     number: "04",
-    title: "Lançamento",
+    title: "Auditoria & Lançamento",
     description:
-      "Deploy, testes finais e acompanhamento para garantir o sucesso do projeto.",
+      "Testes rigorosos de stress, validação de SEO técnico e deploy assistido para garantir que a transição seja perfeita.",
     icon: Rocket,
   },
 ];
@@ -337,35 +337,27 @@ export interface Testimonial {
 
 export const TESTIMONIALS: Testimonial[] = [
   {
-    name: "João Silva",
-    role: "CEO",
-    company: "AgroX",
+    name: "Roberto Almeida",
+    role: "Diretor Comercial",
+    company: "AgroX Digital",
     content:
-      "Dobramos nossos leads em apenas 1 mês após o lançamento do novo site! A equipe da BlackDev entendeu perfeitamente nossas necessidades e entregou um resultado excepcional.",
+      "A reestruturação da nossa presença digital mudou completamente a percepção dos nossos clientes em LEM. A BlackDev foi cirúrgica na execução tecnológica e no design da nossa plataforma.",
     rating: 5,
   },
   {
-    name: "Maria Santos",
-    role: "Diretora",
-    company: "Clínica Vida",
+    name: "Dra. Marina Santos",
+    role: "Diretora Clínica",
+    company: "Instituto Vida",
     content:
-      "O site ficou incrível e profissional. Nossos pacientes elogiam a facilidade de encontrar informações e agendar consultas pelo WhatsApp. Recomendo demais!",
+      "Precisávamos de um ambiente digital que transmitisse a mesma segurança e seriedade da nossa clínica. O resultado final superou nossas expectativas em termos de performance e clareza.",
     rating: 5,
   },
   {
     name: "Carlos Oliveira",
-    role: "Proprietário",
-    company: "Sabor do Oeste",
+    role: "Sócio-Diretor",
+    company: "Oeste Logistics",
     content:
-      "O cardápio digital revolucionou nosso atendimento. Os pedidos online aumentaram 40% e o site é lindo no celular. Melhor investimento que fizemos!",
-    rating: 5,
-  },
-  {
-    name: "Ana Souza",
-    role: "Gerente de Marketing",
-    company: "FitZone Academy",
-    content:
-      "A landing page converteu muito acima das nossas expectativas. Design moderno, rápido e estratégico. A BlackDev é parceira de verdade!",
+      "A estabilidade do sistema web desenvolvido para nossa operação interna otimizou nossos processos em 40%. A comunicação com a equipe técnica sempre foi direta e transparente.",
     rating: 5,
   },
 ];
@@ -380,34 +372,34 @@ export interface FAQItem {
 
 export const FAQ_ITEMS: FAQItem[] = [
   {
-    question: "Quanto custa criar um site profissional?",
+    question: "Como os valores são estruturados?",
     answer:
-      "O valor é personalizado de acordo com a necessidade e complexidade de cada projeto. Como não trabalhamos com modelos engessados, os valores são negociados diretamente com cada cliente para garantir o melhor custo-benefício. Entre em contato para solicitar um orçamento gratuito e sem compromisso.",
+      "Avaliamos o escopo de cada projeto de forma individual. Não trabalhamos com templates ou modelos engessados. Os valores refletem a complexidade da arquitetura, o design de interface e a engenharia envolvida. Realizamos um diagnóstico inicial gratuito para apresentar uma proposta técnica detalhada.",
   },
   {
-    question: "Qual o prazo de entrega?",
+    question: "Qual a estimativa de tempo para implementação?",
     answer:
-      "Sites institucionais são entregues em 7 a 15 dias úteis. Landing pages em 5 a 10 dias. Sistemas web variam de 30 a 60 dias, dependendo da complexidade. Trabalhamos com prazos claros e atualizações constantes.",
+      "Plataformas institucionais demandam de 10 a 20 dias úteis, enquanto sistemas web corporativos são avaliados conforme a regra de negócio. Mantemos cronogramas rígidos e atualizações de status semanais com nossos parceiros.",
   },
   {
-    question: "O site será responsivo (funciona no celular)?",
+    question: "O projeto possui adaptação para dispositivos móveis?",
     answer:
-      "Sim! Todos os nossos projetos são desenvolvidos com abordagem mobile-first, garantindo perfeita visualização e funcionamento em celulares, tablets, notebooks e desktops.",
+      "Absolutamente. A engenharia front-end é construída com fluidez total (fluid layout), garantindo que a interface opere perfeitamente em qualquer proporção de tela, priorizando sempre a experiência mobile-first.",
   },
   {
-    question: "Vocês oferecem manutenção após a entrega?",
+    question: "Qual é o nível de suporte oferecido pós-lançamento?",
     answer:
-      "Sim! Oferecemos planos de manutenção mensal que incluem atualizações de segurança, backup, correção de bugs e suporte técnico. Garantimos que seu site esteja sempre atualizado e funcionando perfeitamente.",
+      "Estabelecemos contratos de manutenção que cobrem auditorias de segurança, integridade do servidor, atualizações de infraestrutura e suporte consultivo. O objetivo é manter o ativo digital performando sem interrupções.",
   },
   {
-    question: "Como funciona o processo de desenvolvimento?",
+    question: "Como funciona a dinâmica de trabalho com a BlackDev?",
     answer:
-      "Nosso processo é dividido em 4 etapas: Descoberta (entender seu negócio), Design (criar o visual), Desenvolvimento (codificar) e Lançamento (publicar e acompanhar). Você participa de cada etapa com aprovações.",
+      "Nossa metodologia baseia-se em quatro pilares: Diagnóstico comercial, Arquitetura Visual (UX/UI), Engenharia Técnica de desenvolvimento e, finalmente, Auditoria de Lançamento. O cliente valida etapas cruciais sem surpresas técnicas.",
   },
   {
-    question: "Vocês atendem empresas fora de Luís Eduardo Magalhães?",
+    question: "O atendimento se restringe a Luís Eduardo Magalhães?",
     answer:
-      "Sim! Embora nossa base seja em LEM, atendemos empresas de toda a região oeste da Bahia e de todo o Brasil de forma remota, com a mesma qualidade e dedicação.",
+      "Nossa operação técnica está baseada em LEM, porém atendemos empresas de diferentes polos corporativos do Brasil de forma remota, mantendo a mesma proximidade estratégica.",
   },
 ];
 
@@ -422,27 +414,27 @@ export interface Value {
 
 export const VALUES: Value[] = [
   {
-    title: "Inovação",
+    title: "Rigor Técnico",
     description:
-      "Utilizamos as tecnologias mais modernas para criar soluções que se destacam no mercado.",
-    icon: Zap,
+      "Não utilizamos atalhos. Construímos arquiteturas escaláveis e escrevemos código limpo para assegurar estabilidade de longo prazo.",
+    icon: Code2,
   },
   {
-    title: "Qualidade",
+    title: "Design de Performance",
     description:
-      "Cada projeto é tratado com atenção meticulosa aos detalhes, garantindo excelência em cada pixel.",
-    icon: Monitor,
+      "O visual não é apenas estético. Cada escolha de interface é fundamentada em métricas, usabilidade e comportamento humano.",
+    icon: Layout,
   },
   {
-    title: "Compromisso",
+    title: "Transparência",
     description:
-      "Cumprimos prazos e mantemos comunicação transparente durante todo o projeto.",
-    icon: Headphones,
+      "Comunicação direta, cronogramas respeitados e clareza total sobre as limitações e possibilidades técnicas de cada projeto.",
+    icon: Search,
   },
   {
-    title: "Resultados",
+    title: "Orientação a Negócios",
     description:
-      "Focamos em métricas reais: mais leads, mais vendas e mais visibilidade para seu negócio.",
+      "Compreendemos que tecnologia é o meio, não o fim. Nossas soluções são desenhadas para amplificar autoridade e captação.",
     icon: TrendingUp,
   },
 ];

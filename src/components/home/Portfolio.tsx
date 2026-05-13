@@ -1,62 +1,59 @@
 import Link from "next/link";
-import { ArrowRight, ExternalLink } from "lucide-react";
+import { ArrowDownRight } from "lucide-react";
 import { PROJECTS } from "@/lib/constants";
 import SectionTitle from "@/components/ui/SectionTitle";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 
 export default function Portfolio() {
-  // Show only first 6 on home page
-  const displayedProjects = PROJECTS.slice(0, 6);
+  const displayedProjects = PROJECTS.slice(0, 4);
 
   return (
-    <section id="portfolio" className="py-20 lg:py-28 bg-secondary relative">
-      <div className="absolute inset-0 dot-pattern opacity-20" />
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="portfolio" className="py-24 lg:py-32 bg-primary">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionTitle
-          badge="Portfólio"
-          title="Projetos que"
-          highlight="geram resultados"
-          description="Conheça alguns dos projetos que desenvolvemos para empresas da região."
+          badge="Case Studies"
+          title="Arquiteturas"
+          highlight="entregues."
+          description="Aplicações de alto desempenho e interfaces focadas em conversão desenvolvidas para nossos clientes."
+          center={false}
         />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-16">
           {displayedProjects.map((project, index) => (
             <ScrollReveal key={project.title} delay={index * 0.1}>
-              <div className="group relative rounded-2xl overflow-hidden glass glass-hover transition-all duration-500 h-full">
-                {/* Image placeholder with gradient */}
-                <div className="relative h-48 bg-gradient-to-br from-accent/10 to-cyan-900/20 flex items-center justify-center overflow-hidden">
-                  <div className="text-4xl font-bold text-accent/20 group-hover:text-accent/30 transition-colors">
-                    {project.title
-                      .split(" ")
-                      .map((w) => w[0])
-                      .join("")}
-                  </div>
-                  {/* Hover overlay */}
-                  <div className="absolute inset-0 bg-accent/10 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                    <div className="w-12 h-12 rounded-full bg-accent/20 flex items-center justify-center backdrop-blur-sm">
-                      <ExternalLink className="w-5 h-5 text-accent" />
-                    </div>
+              <div className={`group flex flex-col ${index % 2 !== 0 ? 'md:mt-16' : ''}`}>
+                <div className="relative w-full aspect-[4/3] bg-surface border border-border overflow-hidden mb-6">
+                  {/* Subtle hover effect on the box */}
+                  <div className="absolute inset-0 bg-text-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  
+                  {/* Text placeholder for now */}
+                  <div className="absolute inset-0 flex items-center justify-center">
+                     <span className="font-serif text-3xl md:text-5xl text-border group-hover:text-text-muted transition-colors duration-500">
+                      {project.title.split(" ").map(w => w[0]).join("")}
+                     </span>
                   </div>
                 </div>
 
-                {/* Content */}
-                <div className="p-6">
-                  <span className="text-xs font-semibold text-accent uppercase tracking-wider">
-                    {project.category}
-                  </span>
-                  <h3 className="mt-2 text-lg font-bold text-text-primary">
+                <div className="flex flex-col">
+                  <div className="flex items-center justify-between mb-3">
+                    <span className="text-xs font-mono tracking-widest text-text-muted uppercase">
+                      {project.category}
+                    </span>
+                  </div>
+                  
+                  <h3 className="text-2xl font-serif text-text-primary mb-3">
                     {project.title}
                   </h3>
-                  <p className="mt-2 text-sm text-text-secondary leading-relaxed">
+                  
+                  <p className="text-base text-text-secondary leading-relaxed mb-6">
                     {project.description}
                   </p>
 
-                  {/* Tags */}
-                  <div className="mt-4 flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-2">
                     {project.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="px-2.5 py-1 text-xs font-medium text-accent/80 bg-accent/5 rounded-md border border-accent/10"
+                        className="px-3 py-1 text-xs font-medium text-text-secondary border border-border"
                       >
                         {tag}
                       </span>
@@ -68,15 +65,17 @@ export default function Portfolio() {
           ))}
         </div>
 
-        {/* View all link */}
-        <div className="mt-12 text-center">
-          <Link
-            href="/portfolio"
-            className="group inline-flex items-center gap-2 px-8 py-3.5 glass glass-hover text-text-primary font-semibold rounded-xl transition-all"
-          >
-            Ver Todos os Projetos
-            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform text-accent" />
-          </Link>
+        <div className="mt-20 border-t border-border pt-12 flex justify-between items-center">
+           <span className="text-lg font-serif text-text-secondary italic">
+             Mais de 50 projetos entregues.
+           </span>
+           <Link
+             href="/portfolio"
+             className="group flex items-center justify-center w-16 h-16 rounded-full border border-border hover:bg-text-primary hover:border-text-primary transition-all"
+             aria-label="Ver todos os projetos"
+           >
+             <ArrowDownRight className="w-6 h-6 text-text-primary group-hover:text-primary transition-colors" />
+           </Link>
         </div>
       </div>
     </section>

@@ -35,15 +35,12 @@ export default function Header() {
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 group" aria-label="BlackDev - Página Inicial">
-            <div className="relative">
-              <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center group-hover:bg-accent/20 transition-colors">
-                <Code2 className="w-6 h-6 text-accent" />
-              </div>
-              <div className="absolute inset-0 rounded-lg bg-accent/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity" />
+          <Link href="/" className="flex items-center gap-3 group" aria-label="BlackDev - Página Inicial">
+            <div className="w-10 h-10 rounded-none bg-surface flex items-center justify-center border border-border group-hover:border-text-secondary transition-colors">
+              <Code2 className="w-5 h-5 text-accent" />
             </div>
-            <span className="text-xl font-bold">
-              Black<span className="text-accent">Dev</span>
+            <span className="text-xl font-bold tracking-tight">
+              BLACK<span className="font-serif italic text-text-secondary ml-0.5">Dev</span>
             </span>
           </Link>
 
@@ -78,7 +75,7 @@ export default function Header() {
           <div className="hidden lg:flex items-center gap-4">
             <WhatsAppDropdown position="bottom">
               <button
-                className="inline-flex items-center gap-2 px-5 py-2.5 bg-accent hover:bg-accent-hover text-primary font-semibold text-sm rounded-lg transition-all hover:shadow-lg hover:shadow-accent/25 outline-none"
+                className="inline-flex items-center gap-2 px-6 py-2.5 bg-accent hover:bg-accent-hover text-primary font-medium text-sm transition-colors outline-none"
               >
                 Solicitar Orçamento
               </button>
@@ -126,7 +123,7 @@ export default function Header() {
               <div className="pt-4 border-t border-border">
                 <WhatsAppDropdown position="bottom" className="w-full">
                   <button
-                    className="block w-full text-center px-5 py-3 bg-accent hover:bg-accent-hover text-primary font-semibold text-sm rounded-lg transition-all outline-none"
+                    className="block w-full text-center px-5 py-3 bg-accent hover:bg-accent-hover text-primary font-medium text-sm transition-colors outline-none"
                   >
                     Solicitar Orçamento
                   </button>

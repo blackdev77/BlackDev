@@ -4,61 +4,39 @@ import ScrollReveal from "@/components/ui/ScrollReveal";
 
 export default function Process() {
   return (
-    <section id="processo" className="py-20 lg:py-28 relative">
+    <section id="processo" className="py-24 lg:py-32 bg-secondary border-y border-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionTitle
-          badge="Como Trabalhamos"
-          title="Do briefing ao"
-          highlight="lançamento"
-          description="Um processo transparente e colaborativo para entregar o melhor resultado."
+          badge="Metodologia"
+          title="Processo de"
+          highlight="Engenharia"
+          description="Do diagnóstico estratégico ao lançamento: transparência, rigor técnico e validação contínua."
+          center={false}
         />
 
-        <div className="relative max-w-3xl mx-auto">
-          {/* Vertical line */}
-          <div className="absolute left-8 lg:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-accent/50 via-accent/20 to-transparent" />
-
+        <div className="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8">
           {PROCESS_STEPS.map((step, index) => {
-            const Icon = step.icon;
-            const isEven = index % 2 === 0;
-
             return (
               <ScrollReveal
                 key={step.number}
                 delay={index * 0.15}
-                direction={isEven ? "left" : "right"}
+                className="flex flex-col relative group"
               >
-                <div
-                  className={`relative flex items-start gap-6 lg:gap-12 mb-12 last:mb-0 ${
-                    isEven ? "lg:flex-row" : "lg:flex-row-reverse"
-                  }`}
-                >
-                  {/* Content */}
-                  <div
-                    className={`flex-1 pl-20 lg:pl-0 ${
-                      isEven ? "lg:text-right" : "lg:text-left"
-                    }`}
-                  >
-                    <span className="text-xs font-bold text-accent uppercase tracking-widest">
-                      Etapa {step.number}
-                    </span>
-                    <h3 className="mt-2 text-xl font-bold text-text-primary">
-                      {step.title}
-                    </h3>
-                    <p className="mt-2 text-sm text-text-secondary leading-relaxed">
-                      {step.description}
-                    </p>
-                  </div>
-
-                  {/* Node */}
-                  <div className="absolute left-4 lg:relative lg:left-auto flex-shrink-0">
-                    <div className="w-10 h-10 rounded-full bg-accent/10 border-2 border-accent flex items-center justify-center glow-border">
-                      <Icon className="w-5 h-5 text-accent" />
-                    </div>
-                  </div>
-
-                  {/* Spacer for desktop layout */}
-                  <div className="hidden lg:block flex-1" />
+                {/* Visual Connector */}
+                <div className="hidden lg:block absolute top-8 left-[80%] right-[-20%] h-[1px] bg-border group-last:hidden" />
+                
+                {/* Large stroked number */}
+                <div className="text-[5rem] lg:text-[7rem] font-serif leading-none text-transparent tracking-tighter select-none transition-colors duration-500 group-hover:text-text-primary/5" style={{ WebkitTextStroke: '1px var(--color-border)', color: 'transparent' }}>
+                  {step.number}
                 </div>
+                
+                <h3 className="mt-6 text-xl font-serif text-text-primary mb-3">
+                  {step.title}
+                </h3>
+                
+                <p className="text-base text-text-secondary leading-relaxed">
+                  {step.description}
+                </p>
               </ScrollReveal>
             );
           })}

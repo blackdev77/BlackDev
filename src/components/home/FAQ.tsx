@@ -1,46 +1,46 @@
 "use client";
 
 import { Disclosure, Transition } from "@headlessui/react";
-import { ChevronDown } from "lucide-react";
+import { Plus, Minus } from "lucide-react";
 import { FAQ_ITEMS } from "@/lib/constants";
 import SectionTitle from "@/components/ui/SectionTitle";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 
 export default function FAQ() {
   return (
-    <section id="faq" className="py-20 lg:py-28 relative">
-      <div className="absolute inset-0 dot-pattern opacity-30" />
-      <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="faq" className="py-24 lg:py-32 bg-secondary border-t border-border">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionTitle
-          badge="Dúvidas Frequentes"
+          badge="FAQ"
           title="Perguntas"
           highlight="Frequentes"
-          description="Tudo o que você precisa saber antes de iniciar seu projeto conosco."
+          description="Alinhamento sobre modelo de trabalho, prazos e engenharia de software."
+          center={true}
         />
 
-        <div className="space-y-4">
+        <div className="mt-16 border-t border-border">
           {FAQ_ITEMS.map((item, index) => (
             <ScrollReveal key={index} delay={index * 0.1}>
-              <Disclosure as="div" className="glass rounded-xl overflow-hidden">
+              <Disclosure as="div" className="border-b border-border">
                 {({ open }) => (
                   <>
-                    <Disclosure.Button className="flex w-full justify-between items-center px-6 py-5 text-left text-text-primary hover:bg-white/5 transition-colors focus:outline-none focus-visible:ring focus-visible:ring-accent/50">
-                      <span className="font-medium pr-4">{item.question}</span>
-                      <ChevronDown
-                        className={`w-5 h-5 text-accent transition-transform duration-200 ${
-                          open ? "rotate-180" : ""
-                        }`}
-                      />
+                    <Disclosure.Button className="flex w-full justify-between items-center py-6 text-left text-text-primary hover:text-text-secondary transition-colors focus:outline-none">
+                      <span className="font-serif text-xl pr-4">{item.question}</span>
+                      {open ? (
+                        <Minus className="w-5 h-5 shrink-0 text-text-muted" />
+                      ) : (
+                        <Plus className="w-5 h-5 shrink-0 text-text-muted" />
+                      )}
                     </Disclosure.Button>
                     <Transition
-                      enter="transition duration-200 ease-out"
-                      enterFrom="transform scale-95 opacity-0"
-                      enterTo="transform scale-100 opacity-100"
-                      leave="transition duration-100 ease-out"
-                      leaveFrom="transform scale-100 opacity-100"
-                      leaveTo="transform scale-95 opacity-0"
+                      enter="transition duration-300 ease-out"
+                      enterFrom="transform -translate-y-4 opacity-0"
+                      enterTo="transform translate-y-0 opacity-100"
+                      leave="transition duration-200 ease-out"
+                      leaveFrom="transform translate-y-0 opacity-100"
+                      leaveTo="transform -translate-y-4 opacity-0"
                     >
-                      <Disclosure.Panel className="px-6 pb-5 pt-2 text-text-secondary text-sm leading-relaxed">
+                      <Disclosure.Panel className="pb-8 text-text-secondary text-base leading-relaxed">
                         {item.answer}
                       </Disclosure.Panel>
                     </Transition>
